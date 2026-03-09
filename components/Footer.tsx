@@ -121,8 +121,7 @@ export default function Footer() {
         <div className="mt-14 border-t border-white/5 pt-6 text-xs text-gray-600">
           <div className="flex flex-col items-center justify-between gap-3 sm:flex-row">
             <p>
-              © {new Date().getFullYear()} {siteConfig.legalName} · SIRET : XXX
-              XXX XXX XXXXX
+              © {new Date().getFullYear()} {siteConfig.legalName} · SIRET : 878 159 664 00019
             </p>
             <div className="flex gap-5">
               <span className="cursor-default">Mentions légales</span>

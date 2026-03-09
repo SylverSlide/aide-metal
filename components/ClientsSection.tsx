@@ -5,7 +5,7 @@ const clients = [
   { name: "HSBC", logo: "/logos/hsbc.svg", width: 110, height: 40 },
   {
     name: "Galeries Lafayette",
-    logo: "/logos/galeries-lafayette.svg",
+    logo: "/logos/galeries-lafayette.jpg",
     width: 140,
     height: 40,
   },
@@ -19,6 +19,18 @@ const clients = [
     name: "Société Générale",
     logo: "/logos/societe-generale.svg",
     width: 140,
+    height: 40,
+  },
+  {
+    name: "Peugeot",
+    logo: "/logos/peugeot.svg",
+    width: 100,
+    height: 40,
+  },
+  {
+    name: "Mercedes",
+    logo: "/logos/mercedes.svg",
+    width: 90,
     height: 40,
   },
 ];

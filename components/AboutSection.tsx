@@ -62,7 +62,7 @@ export default function AboutSection() {
                 </div>
               </div>
               <p className="mt-4 text-xs text-gray-400">
-                SIRET : XXX XXX XXX XXXXX
+                SIRET : 878 159 664 00019
               </p>
             </div>
 
