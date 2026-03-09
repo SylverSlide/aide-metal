@@ -77,7 +77,7 @@ export default function TestimonialsSection({
               href="https://g.page/aide-metal/review"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-sm text-gray-400 transition-colors hover:text-gray-600"
+              className="inline-flex min-h-[44px] items-center gap-1.5 text-sm text-gray-400 transition-colors hover:text-gray-600"
             >
               Retrouvez-nous sur Google
               <ExternalLink className="h-3 w-3" />

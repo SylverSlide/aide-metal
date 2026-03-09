@@ -21,7 +21,6 @@ export default function ZonesSection() {
             <GoogleMap
               query="Île-de-France, France"
               zoom={9}
-              height={500}
               className="rounded-2xl ring-1 ring-gray-100"
             />
 

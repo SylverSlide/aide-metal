@@ -15,7 +15,7 @@ export default function FloatingActions() {
 
   useEffect(() => {
     function onScroll() {
-      setVisible(window.scrollY > 300);
+      setVisible(window.scrollY > 200);
     }
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
@@ -37,7 +37,7 @@ export default function FloatingActions() {
     >
       {/* WhatsApp */}
       <a
-        href={`https://wa.me/33184808080`}
+        href={`https://wa.me/33603287210`}
         target="_blank"
         rel="noopener noreferrer"
         className="flex h-12 w-12 items-center justify-center rounded-full bg-[#25D366] text-white shadow-lg shadow-black/10 transition-transform active:scale-95 hover:scale-105"

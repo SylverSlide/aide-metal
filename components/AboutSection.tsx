@@ -37,7 +37,7 @@ export default function AboutSection() {
                 </p>
               </div>
 
-              <div className="mt-6 grid grid-cols-2 gap-x-6 gap-y-3 text-sm sm:mt-8">
+              <div className="mt-6 grid grid-cols-1 gap-3 text-sm sm:mt-8 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-3">
                 <div>
                   <p className="text-xs text-gray-400">Zone</p>
                   <p className="font-medium text-gray-900">
@@ -79,7 +79,7 @@ export default function AboutSection() {
             <h3 className="mb-8 text-center text-xl font-bold tracking-tight text-primary-950 sm:text-2xl">
               Comment ça se passe
             </h3>
-            <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
               {processSteps.map((step) => (
                 <div key={step.num} className="text-center">
                   <span className="mb-2 block text-2xl font-extrabold text-primary-200 sm:text-3xl">

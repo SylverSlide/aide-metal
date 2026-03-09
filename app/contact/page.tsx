@@ -132,7 +132,6 @@ export default function ContactPage() {
             <GoogleMap
               query={`${siteConfig.address.street}, ${siteConfig.address.postalCode} ${siteConfig.address.city}`}
               zoom={15}
-              height={360}
               className="rounded-2xl ring-1 ring-gray-100"
             />
             <p className="mt-4 text-sm text-gray-400">

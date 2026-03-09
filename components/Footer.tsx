@@ -51,7 +51,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-5 text-[11px] font-semibold uppercase tracking-widest text-gray-600">
+            <h3 className="mb-5 text-xs font-semibold uppercase tracking-widest text-gray-600">
               Services
             </h3>
             <ul className="space-y-1">
@@ -69,7 +69,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-5 text-[11px] font-semibold uppercase tracking-widest text-gray-600">
+            <h3 className="mb-5 text-xs font-semibold uppercase tracking-widest text-gray-600">
               Zones d&apos;intervention
             </h3>
             <ul className="space-y-2 text-sm">
@@ -85,7 +85,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-5 text-[11px] font-semibold uppercase tracking-widest text-gray-600">
+            <h3 className="mb-5 text-xs font-semibold uppercase tracking-widest text-gray-600">
               Informations
             </h3>
             <ul className="space-y-1">

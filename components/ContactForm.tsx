@@ -135,7 +135,7 @@ export default function ContactForm() {
         </label>
         <select
           id="serviceType"
-          className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3.5 text-sm text-gray-900 transition-all focus:border-primary-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/20"
+          className="min-h-[48px] w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3.5 text-sm text-gray-900 transition-all focus:border-primary-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-primary-500/20"
           {...register("serviceType")}
           defaultValue=""
         >
@@ -171,14 +171,14 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="flex w-full items-center justify-center gap-2 rounded-xl bg-accent-500 px-8 py-4 text-base font-bold text-white shadow-lg shadow-accent-500/20 transition-all hover:bg-accent-600 hover:shadow-xl disabled:opacity-60"
+        className="flex min-h-[52px] w-full items-center justify-center gap-2 rounded-xl bg-accent-500 px-6 text-[15px] font-bold text-white shadow-lg shadow-accent-500/20 transition-all hover:bg-accent-600 hover:shadow-xl active:scale-[0.98] disabled:opacity-60"
       >
         {isSubmitting ? (
           <Loader2 className="h-5 w-5 animate-spin" />
         ) : (
           <Send className="h-5 w-5" />
         )}
-        {isSubmitting ? "Envoi en cours..." : "Envoyer ma demande de devis"}
+        {isSubmitting ? "Envoi..." : "Envoyer ma demande"}
       </button>
 
       <p className="text-center text-xs text-gray-400">
