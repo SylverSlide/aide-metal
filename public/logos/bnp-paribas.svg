@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 70" fill="none">
+  <g transform="translate(0, 12)">
+    <circle cx="12" cy="12" r="4" fill="#00A651"/>
+    <circle cx="24" cy="6" r="4" fill="#00A651"/>
+    <circle cx="36" cy="12" r="4" fill="#00A651"/>
+    <path d="M6 24 C6 24, 24 40, 42 24" stroke="#00A651" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+  <text x="56" y="28" font-family="Arial,sans-serif" font-size="22" font-weight="700" fill="#111">BNP</text>
+  <text x="56" y="52" font-family="Arial,sans-serif" font-size="18" font-weight="400" fill="#00A651" letter-spacing="1">PARIBAS</text>
+</svg>

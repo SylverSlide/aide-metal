@@ -69,17 +69,11 @@ export default function Navbar() {
         <div className="flex items-center gap-1.5">
           <a
             href={siteConfig.phoneHref}
+            aria-label={`Appeler le ${siteConfig.phone}`}
             className="hidden items-center gap-2 rounded-xl bg-accent-500 px-5 py-2.5 text-sm font-semibold text-white shadow-sm shadow-accent-500/20 transition-all hover:bg-accent-600 hover:shadow-md hover:shadow-accent-500/25 lg:flex"
           >
             <Phone className="h-4 w-4" />
             {siteConfig.phone}
-          </a>
-          <a
-            href={siteConfig.phoneHref}
-            className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent-500 text-white shadow-sm shadow-accent-500/20 active:bg-accent-600 lg:hidden"
-            aria-label="Appeler"
-          >
-            <Phone className="h-[18px] w-[18px]" />
           </a>
           <MobileMenu />
         </div>

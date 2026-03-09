@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 70" fill="none">
+  <g transform="translate(0, 10)">
+    <rect x="0" y="0" width="16" height="16" fill="#E4002B"/>
+    <rect x="18" y="0" width="16" height="16" fill="#111"/>
+    <rect x="0" y="18" width="16" height="16" fill="#111"/>
+    <rect x="18" y="18" width="16" height="16" fill="#E4002B"/>
+    <rect x="0" y="36" width="16" height="16" fill="#E4002B"/>
+    <rect x="18" y="36" width="16" height="16" fill="#111"/>
+  </g>
+  <text x="48" y="28" font-family="Arial,sans-serif" font-size="16" font-weight="700" fill="#111" letter-spacing="0.5">SOCIÉTÉ</text>
+  <text x="48" y="50" font-family="Arial,sans-serif" font-size="16" font-weight="700" fill="#111" letter-spacing="0.5">GÉNÉRALE</text>
+</svg>

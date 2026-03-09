@@ -1,16 +1,15 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import { testimonials, type Testimonial } from "@/data/testimonials";
 
 function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   return (
     <figure className="flex flex-col rounded-2xl bg-white p-6 shadow-[0_1px_3px_rgba(0,0,0,0.04)] ring-1 ring-gray-100 sm:p-8">
-      {/* Large decorative quote */}
       <span className="mb-3 block text-4xl leading-none text-primary-200 select-none">
         &ldquo;
       </span>
       <blockquote className="flex-1">
-        <p className="text-[15px] leading-relaxed text-gray-600">
+        <p className="text-[15px] leading-relaxed text-gray-500">
           {testimonial.text}
         </p>
       </blockquote>
@@ -45,7 +44,7 @@ export default function TestimonialsSection({
   return (
     <section className="py-14 sm:py-20 lg:py-28">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="mx-auto mb-10 max-w-2xl text-center sm:mb-12">
+        <div className="mx-auto mb-10 max-w-2xl text-center sm:mb-14">
           <p className="mb-3 text-xs font-semibold uppercase tracking-widest text-accent-500">
             Témoignages
           </p>
@@ -66,7 +65,7 @@ export default function TestimonialsSection({
         </div>
 
         {showLink && (
-          <div className="mt-8 text-center sm:mt-10">
+          <div className="mt-8 flex flex-col items-center gap-4 sm:mt-10 sm:flex-row sm:justify-center sm:gap-6">
             <Link
               href="/avis-clients"
               className="inline-flex items-center gap-2 text-sm font-semibold text-primary-700 transition-colors hover:text-accent-600"
@@ -74,6 +73,15 @@ export default function TestimonialsSection({
               Voir tous les avis
               <ArrowRight className="h-4 w-4" />
             </Link>
+            <a
+              href="https://g.page/aide-metal/review"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm text-gray-400 transition-colors hover:text-gray-600"
+            >
+              Retrouvez-nous sur Google
+              <ExternalLink className="h-3 w-3" />
+            </a>
           </div>
         )}
       </div>

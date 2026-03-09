@@ -1,6 +1,8 @@
 import { services } from "@/data/services";
 import ServiceCard from "./ServiceCard";
 
+const brands = ["Somfy", "Nice", "Simu", "Came", "BFT", "Hörmann", "FAAC"];
+
 export default function ServicesGrid() {
   return (
     <section className="py-14 sm:py-20 lg:py-28">
@@ -13,8 +15,8 @@ export default function ServicesGrid() {
             Nos services
           </h2>
           <p className="mt-3 text-[15px] text-gray-500 sm:text-base">
-            Une gamme complète de prestations pour vos rideaux métalliques,
-            réalisées par des techniciens qualifiés.
+            Installation, dépannage, réparation et motorisation de rideaux
+            métalliques pour commerces et locaux professionnels.
           </p>
         </div>
         <div className="grid gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-4">
@@ -29,6 +31,10 @@ export default function ServicesGrid() {
             />
           ))}
         </div>
+        <p className="mt-8 text-center text-xs text-gray-400">
+          Nous travaillons avec {brands.join(", ")} et toutes les autres
+          marques du marché.
+        </p>
       </div>
     </section>
   );

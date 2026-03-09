@@ -1,23 +1,6 @@
-import { Phone } from "lucide-react";
+import { Phone, MapPin } from "lucide-react";
 import { siteConfig } from "@/data/site";
 import GoogleMap from "./GoogleMap";
-
-const idfDepartments = [
-  { code: "75", name: "Paris" },
-  { code: "77", name: "Seine-et-Marne" },
-  { code: "78", name: "Yvelines" },
-  { code: "91", name: "Essonne" },
-  { code: "92", name: "Hauts-de-Seine" },
-  { code: "93", name: "Seine-Saint-Denis" },
-  { code: "94", name: "Val-de-Marne" },
-  { code: "95", name: "Val-d'Oise" },
-];
-
-const extraDepartments = [
-  { code: "02", name: "Aisne" },
-  { code: "51", name: "Marne" },
-  { code: "60", name: "Oise" },
-];
 
 export default function ZonesSection() {
   return (
@@ -30,74 +13,60 @@ export default function ZonesSection() {
           <h2 className="text-2xl font-bold tracking-tight text-primary-950 sm:text-3xl">
             Zone d&apos;intervention
           </h2>
-          <p className="mt-3 text-[15px] text-gray-500 sm:text-base">
-            Île-de-France et départements limitrophes — nos techniciens se
-            déplacent sur l&apos;ensemble de cette zone.
-          </p>
         </div>
 
-        <div className="mx-auto grid max-w-5xl items-start gap-8 lg:grid-cols-5 lg:gap-12">
-          {/* Map */}
-          <div className="lg:col-span-3">
+        <div className="mx-auto max-w-5xl">
+          {/* Map + floating card */}
+          <div className="relative">
             <GoogleMap
               query="Île-de-France, France"
               zoom={9}
-              height={420}
-              className="rounded-2xl shadow-[0_1px_3px_rgba(0,0,0,0.04)] ring-1 ring-gray-100"
+              height={500}
+              className="rounded-2xl ring-1 ring-gray-100"
             />
-          </div>
 
-          {/* Departments */}
-          <div className="lg:col-span-2">
-            <p className="mb-3 text-[11px] font-semibold uppercase tracking-widest text-gray-400">
-              Île-de-France
-            </p>
-            <div className="grid grid-cols-2 gap-2">
-              {idfDepartments.map((d) => (
-                <div
-                  key={d.code}
-                  className="rounded-xl bg-gray-50 px-3.5 py-3 ring-1 ring-gray-100"
-                >
-                  <span className="block text-lg font-extrabold text-primary-950">
-                    {d.code}
-                  </span>
-                  <span className="block text-[11px] text-gray-400">
-                    {d.name}
-                  </span>
+            {/* Floating card */}
+            <div className="mt-6 lg:absolute lg:bottom-6 lg:left-6 lg:mt-0 lg:w-80">
+              <div className="rounded-2xl bg-white p-6 shadow-lg ring-1 ring-gray-100">
+                <div className="mb-4 flex items-center gap-2.5">
+                  <MapPin className="h-5 w-5 text-accent-500" />
+                  <h3 className="font-bold text-primary-950">
+                    Où on intervient
+                  </h3>
                 </div>
-              ))}
-            </div>
 
-            <p className="mb-3 mt-6 text-[11px] font-semibold uppercase tracking-widest text-gray-400">
-              Départements limitrophes
-            </p>
-            <div className="grid grid-cols-3 gap-2">
-              {extraDepartments.map((d) => (
-                <div
-                  key={d.code}
-                  className="rounded-xl bg-gray-50 px-3.5 py-3 ring-1 ring-gray-100"
-                >
-                  <span className="block text-lg font-extrabold text-primary-950/60">
-                    {d.code}
-                  </span>
-                  <span className="block text-[11px] text-gray-400">
-                    {d.name}
-                  </span>
+                <div className="space-y-3 text-sm text-gray-600">
+                  <div>
+                    <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-gray-400">
+                      Île-de-France
+                    </p>
+                    <p>
+                      Paris, Hauts-de-Seine, Seine-Saint-Denis, Val-de-Marne,
+                      Yvelines, Essonne, Val-d&apos;Oise, Seine-et-Marne
+                    </p>
+                  </div>
+                  <div>
+                    <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-gray-400">
+                      Départements limitrophes
+                    </p>
+                    <p>Oise, Aisne, Marne</p>
+                  </div>
                 </div>
-              ))}
-            </div>
 
-            <div className="mt-6 rounded-xl bg-accent-50 px-4 py-3.5 ring-1 ring-accent-100">
-              <p className="text-xs text-accent-800">
-                Pas sûr qu&apos;on couvre votre secteur ?
-              </p>
-              <a
-                href={siteConfig.phoneHref}
-                className="mt-1 flex items-center gap-1.5 text-sm font-bold text-accent-600 transition-colors hover:text-accent-700"
-              >
-                <Phone className="h-3.5 w-3.5" />
-                {siteConfig.phone}
-              </a>
+                <div className="mt-5 border-t border-gray-100 pt-4">
+                  <p className="mb-2 text-xs text-gray-400">
+                    Pas sûr qu&apos;on couvre votre secteur ?
+                  </p>
+                  <a
+                    href={siteConfig.phoneHref}
+                    aria-label={`Appeler le ${siteConfig.phone}`}
+                    className="flex items-center gap-2 text-sm font-bold text-accent-600 transition-colors hover:text-accent-700"
+                  >
+                    <Phone className="h-4 w-4" />
+                    {siteConfig.phone}
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
