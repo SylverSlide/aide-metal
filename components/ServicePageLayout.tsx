@@ -1,5 +1,7 @@
 import Link from "next/link";
-import { Phone, CheckCircle, ArrowRight, Camera } from "lucide-react";
+import Image from "next/image";
+import { Phone, CheckCircle, ArrowRight } from "lucide-react";
+import { images } from "@/data/images";
 import { siteConfig } from "@/data/site";
 import type { Service } from "@/data/services";
 import { services } from "@/data/services";
@@ -71,11 +73,18 @@ export default function ServicePageLayout({ service }: ServicePageLayoutProps) {
                 </p>
               </div>
               <div className="lg:col-span-2">
-                <div className="flex flex-col items-center justify-center rounded-2xl bg-gray-100 aspect-[4/3]">
-                  <Camera className="mb-2 h-8 w-8 text-gray-300" />
-                  <span className="px-4 text-center text-xs text-gray-400">
-                    Photo : {service.name.toLowerCase()}
-                  </span>
+                <div className="relative overflow-hidden rounded-2xl ring-1 ring-gray-100">
+                  <Image
+                    src={
+                      images.services[
+                        service.slug.split("-")[0] as keyof typeof images.services
+                      ] || images.hero
+                    }
+                    alt={service.name}
+                    width={600}
+                    height={450}
+                    className="aspect-[4/3] h-auto w-full object-cover"
+                  />
                 </div>
               </div>
             </div>

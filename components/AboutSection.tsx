@@ -1,5 +1,6 @@
-import { Camera } from "lucide-react";
+import Image from "next/image";
 import { siteConfig } from "@/data/site";
+import { images } from "@/data/images";
 
 const processSteps = [
   { num: "01", title: "Appel", text: "Vous nous expliquez la situation." },
@@ -26,7 +27,7 @@ export default function AboutSection() {
                   Aide Métal a été fondée en 2010 par{" "}
                   <strong className="text-primary-950">Prénom Nom</strong>,
                   technicien spécialisé en fermetures métalliques depuis plus de
-                  20 ans. L&apos;entreprise est basée à Paris et intervient dans
+                  20 ans. L&apos;entreprise est basée à Dugny et intervient dans
                   toute l&apos;Île-de-France et les départements limitrophes.
                 </p>
                 <p>
@@ -40,9 +41,7 @@ export default function AboutSection() {
               <div className="mt-6 grid grid-cols-1 gap-3 text-sm sm:mt-8 sm:grid-cols-2 sm:gap-x-6 sm:gap-y-3">
                 <div>
                   <p className="text-xs text-gray-400">Zone</p>
-                  <p className="font-medium text-gray-900">
-                    IDF + 60, 02, 51
-                  </p>
+                  <p className="font-medium text-gray-900">IDF + 60, 02, 51</p>
                 </div>
                 <div>
                   <p className="text-xs text-gray-400">Depuis</p>
@@ -50,15 +49,11 @@ export default function AboutSection() {
                 </div>
                 <div>
                   <p className="text-xs text-gray-400">Assurance</p>
-                  <p className="font-medium text-gray-900">
-                    RC Pro & décennale
-                  </p>
+                  <p className="font-medium text-gray-900">RC Pro & décennale</p>
                 </div>
                 <div>
                   <p className="text-xs text-gray-400">Paiement</p>
-                  <p className="font-medium text-gray-900">
-                    CB, chèque, virement
-                  </p>
+                  <p className="font-medium text-gray-900">CB, chèque, virement</p>
                 </div>
               </div>
               <p className="mt-4 text-xs text-gray-400">
@@ -66,15 +61,22 @@ export default function AboutSection() {
               </p>
             </div>
 
-            <div className="flex flex-col items-center justify-center rounded-2xl bg-gray-100 aspect-[4/3] sm:aspect-auto sm:min-h-[350px]">
-              <Camera className="mb-2 h-10 w-10 text-gray-300" />
-              <span className="px-6 text-center text-xs text-gray-400">
-                Photo : Prénom Nom, fondateur d&apos;Aide Métal
-              </span>
+            {/* Photo with accent offset */}
+            <div className="relative">
+              <div className="absolute -bottom-3 -right-3 h-full w-full rounded-2xl bg-accent-500/10 sm:-bottom-4 sm:-right-4" />
+              <div className="relative overflow-hidden rounded-2xl ring-1 ring-gray-100">
+                <Image
+                  src={images.founder}
+                  alt="Fondateur d'Aide Métal"
+                  width={600}
+                  height={700}
+                  className="aspect-[4/3] h-auto w-full object-cover sm:aspect-auto sm:min-h-[350px]"
+                />
+              </div>
             </div>
           </div>
 
-          {/* Process intégré */}
+          {/* Process */}
           <div className="mt-14 border-t border-gray-100 pt-14 sm:mt-20 sm:pt-20">
             <h3 className="mb-8 text-center text-xl font-bold tracking-tight text-primary-950 sm:text-2xl">
               Comment ça se passe

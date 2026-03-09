@@ -21,7 +21,6 @@ export default function HomePage() {
         title="Rideaux métalliques en Île-de-France"
         subtitle="Installation, dépannage, réparation et motorisation pour commerces et locaux professionnels. Paris, petite et grande couronne, Oise, Aisne, Marne."
         showImage
-        imageLabel="Photo : technicien Aide Métal devant un rideau métallique installé"
       />
 
       <ClientsSection />

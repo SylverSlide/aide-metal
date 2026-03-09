@@ -1,13 +1,14 @@
 import Link from "next/link";
-import { Phone, Camera, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { Phone, ArrowRight } from "lucide-react";
 import { siteConfig } from "@/data/site";
+import { images } from "@/data/images";
 
 interface HeroSectionProps {
   title: string;
   subtitle: string;
   showCTAs?: boolean;
   showImage?: boolean;
-  imageLabel?: string;
 }
 
 export default function HeroSection({
@@ -15,7 +16,6 @@ export default function HeroSection({
   subtitle,
   showCTAs = true,
   showImage = false,
-  imageLabel = "Photo : rideau métallique installé",
 }: HeroSectionProps) {
   if (showImage) {
     return (
@@ -50,12 +50,18 @@ export default function HeroSection({
               )}
             </div>
 
-            <div className="hidden rounded-3xl border border-white/10 bg-white/[0.03] p-2 sm:block">
-              <div className="flex flex-col items-center justify-center rounded-2xl bg-white/[0.04] aspect-[4/3] lg:aspect-auto lg:h-80">
-                <Camera className="mb-2 h-10 w-10 text-white/15" />
-                <span className="px-6 text-center text-xs text-white/25">
-                  {imageLabel}
-                </span>
+            {/* Image with accent offset */}
+            <div className="relative hidden sm:block">
+              <div className="absolute -bottom-3 -right-3 h-full w-full rounded-3xl bg-accent-500/15 lg:-bottom-4 lg:-right-4" />
+              <div className="relative overflow-hidden rounded-3xl ring-1 ring-white/10">
+                <Image
+                  src={images.hero}
+                  alt="Rideau métallique installé sur un commerce"
+                  width={800}
+                  height={600}
+                  className="aspect-[4/3] h-auto w-full object-cover lg:aspect-auto lg:h-80"
+                  priority
+                />
               </div>
             </div>
           </div>
