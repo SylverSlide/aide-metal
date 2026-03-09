@@ -17,13 +17,13 @@ const clients = [
   },
   {
     name: "Société Générale",
-    logo: "/logos/societe-generale.svg",
+    logo: "/logos/societe-generale.png",
     width: 140,
     height: 40,
   },
   {
     name: "Peugeot",
-    logo: "/logos/peugeot.svg",
+    logo: "/logos/peugeot.png",
     width: 100,
     height: 40,
   },
