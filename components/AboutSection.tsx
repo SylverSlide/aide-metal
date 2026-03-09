@@ -1,6 +1,4 @@
-import Image from "next/image";
-import { siteConfig } from "@/data/site";
-import { images } from "@/data/images";
+import { Camera } from "lucide-react";
 
 const processSteps = [
   { num: "01", title: "Appel", text: "Vous nous expliquez la situation." },
@@ -61,22 +59,19 @@ export default function AboutSection() {
               </p>
             </div>
 
-            {/* Photo with accent offset */}
             <div className="relative">
               <div className="absolute -bottom-3 -right-3 h-full w-full rounded-2xl bg-accent-500/10 sm:-bottom-4 sm:-right-4" />
-              <div className="relative overflow-hidden rounded-2xl ring-1 ring-gray-100">
-                <Image
-                  src={images.founder}
-                  alt="Fondateur d'Aide Métal"
-                  width={600}
-                  height={700}
-                  className="aspect-[4/3] h-auto w-full object-cover sm:aspect-auto sm:min-h-[350px]"
-                />
+              <div className="relative flex flex-col items-center justify-center rounded-2xl bg-gradient-to-br from-gray-50 to-gray-100 ring-1 ring-gray-100 aspect-[4/3] sm:aspect-auto sm:min-h-[350px]">
+                <div className="flex flex-col items-center rounded-xl border-2 border-dashed border-gray-200 px-8 py-6">
+                  <Camera className="mb-2 h-10 w-10 text-gray-300" />
+                  <span className="text-center text-xs text-gray-400">
+                    Photo : fondateur d&apos;Aide Métal
+                  </span>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Process */}
           <div className="mt-14 border-t border-gray-100 pt-14 sm:mt-20 sm:pt-20">
             <h3 className="mb-8 text-center text-xl font-bold tracking-tight text-primary-950 sm:text-2xl">
               Comment ça se passe

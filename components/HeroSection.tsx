@@ -1,8 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
-import { Phone, ArrowRight } from "lucide-react";
+import { Phone, Camera, ArrowRight } from "lucide-react";
 import { siteConfig } from "@/data/site";
-import { images } from "@/data/images";
 
 interface HeroSectionProps {
   title: string;
@@ -50,18 +48,15 @@ export default function HeroSection({
               )}
             </div>
 
-            {/* Image with accent offset */}
             <div className="relative hidden sm:block">
               <div className="absolute -bottom-3 -right-3 h-full w-full rounded-3xl bg-accent-500/15 lg:-bottom-4 lg:-right-4" />
-              <div className="relative overflow-hidden rounded-3xl ring-1 ring-white/10">
-                <Image
-                  src={images.hero}
-                  alt="Rideau métallique installé sur un commerce"
-                  width={800}
-                  height={600}
-                  className="aspect-[4/3] h-auto w-full object-cover lg:aspect-auto lg:h-80"
-                  priority
-                />
+              <div className="relative flex flex-col items-center justify-center overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] aspect-[4/3] lg:aspect-auto lg:h-80">
+                <div className="flex flex-col items-center rounded-xl border-2 border-dashed border-white/10 px-8 py-6">
+                  <Camera className="mb-2 h-10 w-10 text-white/15" />
+                  <span className="text-center text-xs text-white/25">
+                    Photo : rideau métallique installé
+                  </span>
+                </div>
               </div>
             </div>
           </div>

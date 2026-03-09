@@ -1,8 +1,7 @@
 import Link from "next/link";
-import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { realisations } from "@/data/realisations";
-import { images } from "@/data/images";
+import ImagePlaceholder from "./ImagePlaceholder";
 import FadeIn from "./FadeIn";
 
 interface RealisationsPreviewProps {
@@ -34,23 +33,17 @@ export default function RealisationsPreview({
 
         <div className="mx-auto max-w-5xl">
           <div className="grid gap-4 sm:gap-5 lg:grid-cols-5 lg:grid-rows-2">
-            {/* Featured */}
             {featured && (
               <FadeIn className="lg:col-span-3 lg:row-span-2">
                 <article className="group h-full overflow-hidden rounded-2xl bg-white shadow-[0_1px_3px_rgba(0,0,0,0.04)] ring-1 ring-gray-100">
-                  <div className="relative overflow-hidden aspect-video lg:aspect-auto lg:h-[55%]">
-                    <Image
-                      src={images.realisations[0].src}
-                      alt={images.realisations[0].alt}
-                      width={800}
-                      height={500}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <span className="absolute left-4 top-4 rounded-full bg-accent-500 px-3 py-1 text-[11px] font-bold text-white">
-                      {featured.service}
-                    </span>
-                  </div>
+                  <ImagePlaceholder
+                    label={featured.imageLabel}
+                    className="rounded-none"
+                  />
                   <div className="p-5 sm:p-6">
+                    <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-accent-600">
+                      {featured.service}
+                    </p>
                     <h3 className="mb-2 text-lg font-bold text-primary-950">
                       {featured.title}
                     </h3>
@@ -65,7 +58,6 @@ export default function RealisationsPreview({
               </FadeIn>
             )}
 
-            {/* Smaller cards */}
             {rest.map((real, i) => (
               <FadeIn
                 key={real.id}
@@ -73,19 +65,14 @@ export default function RealisationsPreview({
                 className="lg:col-span-2"
               >
                 <article className="group flex h-full flex-col overflow-hidden rounded-2xl bg-white shadow-[0_1px_3px_rgba(0,0,0,0.04)] ring-1 ring-gray-100 sm:flex-row lg:flex-col">
-                  <div className="relative shrink-0 overflow-hidden aspect-video sm:aspect-square sm:w-40 lg:aspect-video lg:w-auto">
-                    <Image
-                      src={images.realisations[i + 1]?.src || images.realisations[0].src}
-                      alt={images.realisations[i + 1]?.alt || real.title}
-                      width={600}
-                      height={400}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <span className="absolute left-3 top-3 rounded-full bg-accent-500 px-2.5 py-0.5 text-[10px] font-bold text-white">
-                      {real.service}
-                    </span>
-                  </div>
+                  <ImagePlaceholder
+                    label={real.imageLabel}
+                    className="shrink-0 rounded-none sm:w-40 sm:!aspect-square lg:w-auto lg:!aspect-video"
+                  />
                   <div className="flex flex-1 flex-col p-4 sm:p-5">
+                    <p className="mb-1 text-xs font-semibold uppercase tracking-wider text-accent-600">
+                      {real.service}
+                    </p>
                     <h3 className="mb-1 text-sm font-bold text-primary-950">
                       {real.title}
                     </h3>

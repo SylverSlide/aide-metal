@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { realisations } from "@/data/realisations";
-import { images } from "@/data/images";
 import HeroSection from "@/components/HeroSection";
 import CTASection from "@/components/CTASection";
+import ImagePlaceholder from "@/components/ImagePlaceholder";
 import FadeIn from "@/components/FadeIn";
 
 export const metadata: Metadata = {
@@ -27,25 +26,15 @@ export default function RealisationsPage() {
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {realisations.map((real, i) => (
               <FadeIn key={real.id} delay={i * 80}>
-                <article className="group overflow-hidden rounded-2xl bg-white shadow-[0_1px_3px_rgba(0,0,0,0.04)] ring-1 ring-gray-100">
-                  <div className="relative overflow-hidden aspect-video">
-                    <Image
-                      src={
-                        images.realisations[i]?.src ||
-                        images.realisations[0].src
-                      }
-                      alt={
-                        images.realisations[i]?.alt || real.title
-                      }
-                      width={600}
-                      height={400}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <span className="absolute left-4 top-4 rounded-full bg-accent-500 px-3 py-1 text-[11px] font-bold text-white">
-                      {real.service}
-                    </span>
-                  </div>
+                <article className="overflow-hidden rounded-2xl bg-white shadow-[0_1px_3px_rgba(0,0,0,0.04)] ring-1 ring-gray-100">
+                  <ImagePlaceholder
+                    label={real.imageLabel}
+                    className="rounded-none"
+                  />
                   <div className="p-5 sm:p-6">
+                    <p className="mb-2 text-xs font-semibold uppercase tracking-wider text-accent-600">
+                      {real.service}
+                    </p>
                     <h2 className="mb-2 text-lg font-bold text-primary-950">
                       {real.title}
                     </h2>
